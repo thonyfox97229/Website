@@ -1,31 +1,3 @@
-<a href=https://wa.me/33787155732 class="whatsapp-btn" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
-
-<style>
-.whatsapp-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    z-index: 9999;
-}
-.whatsapp-btn img {
-    width: 35px;
-    height: 35px;
-}
-.whatsapp-btn:hover {
-    transform: scale(1.1);
-    transition: 0.2s;
-}
-</style>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,7 +5,7 @@
   <title>Anthony • Site Vitrine Luxe Animé</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- GSAP CDN -->
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
@@ -61,7 +33,6 @@
       padding: 0 24px;
     }
 
-    /* HEADER */
     header {
       padding: 28px 0;
       display: flex;
@@ -102,7 +73,6 @@
 
     .btn-outline:hover { background: rgba(212,175,55,0.15); }
 
-    /* HERO */
     .hero {
       padding: 80px 0;
       display: grid;
@@ -111,13 +81,16 @@
       align-items: center;
     }
 
+    .hero h1, .hero p, .btn-primary, .hero .card {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
     .hero h1 {
       font-size: 52px;
       line-height: 1.1;
       margin-bottom: 20px;
       font-weight: 700;
-      opacity: 0;
-      transform: translateY(40px);
     }
 
     .hero h1 span { color: var(--gold); }
@@ -128,8 +101,6 @@
       margin-bottom: 32px;
       max-width: 480px;
       line-height: 1.6;
-      opacity: 0;
-      transform: translateY(40px);
     }
 
     .btn-primary {
@@ -141,8 +112,6 @@
       font-weight: 600;
       font-size: 15px;
       transition: 0.3s;
-      opacity: 0;
-      transform: translateY(40px);
     }
 
     .btn-primary:hover { background: #c9a33a; }
@@ -168,14 +137,16 @@
       line-height: 1.6;
     }
 
-    /* SECTIONS */
+    section h2, section p.section-sub {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
     section h2 {
       font-size: 32px;
       margin-bottom: 16px;
       color: var(--gold);
       text-align: center;
-      opacity: 0;
-      transform: translateY(40px);
     }
 
     section p.section-sub {
@@ -183,8 +154,6 @@
       color: var(--muted);
       margin-bottom: 40px;
       font-size: 16px;
-      opacity: 0;
-      transform: translateY(40px);
     }
 
     .cards {
@@ -193,16 +162,11 @@
       gap: 26px;
     }
 
-    .cards .card {
-      transition: 0.3s;
-    }
-
     .cards .card:hover {
       transform: translateY(-6px);
       border-color: var(--gold);
     }
 
-    /* CTA */
     .cta {
       text-align: center;
       padding: 80px 20px;
@@ -213,19 +177,6 @@
       transform: translateY(40px);
     }
 
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 12px;
-      color: var(--gold);
-    }
-
-    .cta p {
-      color: var(--muted);
-      margin-bottom: 24px;
-      font-size: 17px;
-    }
-
-    /* FOOTER */
     footer {
       text-align: center;
       padding: 40px 0;
@@ -235,152 +186,170 @@
       margin-top: 40px;
     }
 
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
+    /* WhatsApp */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      z-index: 9999;
     }
+    .whatsapp-btn img { width: 35px; }
+    .whatsapp-btn:hover { transform: scale(1.1); transition: 0.2s; }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<!-- WhatsApp -->
+<a href="https://wa.me/33787155732" class="whatsapp-btn" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
-    <header>
-      <div class="logo">ANTHONY • LUXE</div>
-      <nav>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact" class="btn-outline">Devis</a>
-      </nav>
-    </header>
+<div class="container">
 
-    <section class="hero">
-      <div>
-        <h1> <span><h1>Création de sites web sur mesure & élégants</h1>
-</span></h1>
-        <p>Des sites haut de gamme, élégants, minimalistes et conçus pour sublimer votre image de marque.</p>
-        <a href="#portfolio" class="btn-primary">Voir mes réalisations</a>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">ANTHONY • LUXE</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact" class="btn-outline">Devis</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1><span>Création de sites web sur mesure & élégants</span></h1>
+      <p>Des sites haut de gamme, élégants, minimalistes et conçus pour sublimer votre image de marque.</p>
+      <a href="#portfolio" class="btn-primary">Voir mes réalisations</a>
+    </div>
+
+    <div class="card">
+      <h3>Anthony • Designer Luxe</h3>
+      <p>Spécialiste des univers premium, branding haut de gamme et interfaces élégantes.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <h2>Services Premium</h2>
+    <p class="section-sub">Une expérience digitale raffinée et sur mesure.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Design Haute Couture</h3>
+        <p>Identité visuelle élégante, typographies premium, mise en page luxueuse.</p>
       </div>
 
       <div class="card">
-        <h3>Anthony • Designer Luxe</h3>
-        <p>Spécialiste des univers premium, branding haut de gamme et interfaces élégantes.</p>
-      </div>
-    </section>
-
-    <section id="services">
-      <h2>Services Premium</h2>
-      <p class="section-sub">Une expérience digitale raffinée et sur mesure.</p>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Design Haute Couture</h3>
-          <p>Identité visuelle élégante, typographies premium, mise en page luxueuse.</p>
-        </div>
-
-        <div class="card">
-          <h3>Site Ultra‑Rapide</h3>
-          <p>Optimisation poussée, animations fluides, expérience utilisateur haut de gamme.</p>
-        </div>
-
-        <div class="card">
-          <h3>Pages Exclusives</h3>
-          <p>Accueil, services, marque, contact — tout pensé pour un univers luxe.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio" style="margin-top: 80px;">
-      <h2>Réalisations Premium</h2>
-      <p class="section-sub">Sélection de projets haut de gamme.</p>
-
-      <div class="cards">
-        <div class="card">
-          <h3>Site Luxe — Coach VIP</h3>
-          <p>Minimalisme doré, storytelling premium, prise de rendez-vous haut de gamme.</p>
-        </div>
-
-        <div class="card">
-          <h3>Marque Apparel Prestige</h3>
-          <p>Lookbook élégant, collections premium, univers visuel raffiné.</p>
-        </div>
-
-        <div class="card">
-          <h3>Restaurant Gastronomique</h3>
-          <p>Menu haute cuisine, ambiance chic, réservation intégrée.</p>
-        </div>
+        <h3>Site Ultra‑Rapide</h3>
+        <p>Optimisation poussée, animations fluides, expérience utilisateur haut de gamme.</p>
       </div>
 
-    </section>
-
-  </div>
-
-  <section class="cta" id="contact">
-    <h2>Prêt à créer votre univers luxe ?</h2>
-    <p>Contactez-moi pour un accompagnement premium et sur mesure.</p>
-    <a href="mailto:contact@tonmail.fr" class="btn-primary">Me contacter</a>
+      <div class="card">
+        <h3>Pages Exclusives</h3>
+        <p>Accueil, services, marque, contact — tout pensé pour un univers luxe.</p>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    © 2026 — Anthony • Studio Luxe
-  </footer>
+  <!-- PORTFOLIO -->
+  <section id="portfolio" style="margin-top: 80px;">
+    <h2>Réalisations Premium</h2>
+    <p class="section-sub">Sélection de projets haut de gamme.</p>
 
-  <!-- GSAP ANIMATIONS -->
-  <script>
-    gsap.from("header", {
-      opacity: 0,
-      duration: 1.2,
-      y: -30,
-      ease: "power3.out"
-    });
+    <div class="cards">
 
-    gsap.to(".hero h1", {
+      <div class="card">
+        <h3>Site Luxe — Coach VIP</h3>
+        <p>Minimalisme doré, storytelling premium, prise de rendez-vous haut de gamme.</p>
+      </div>
+
+      <div class="card">
+        <h3>Marque Apparel Prestige</h3>
+        <p>Lookbook élégant, collections premium, univers visuel raffiné.</p>
+      </div>
+
+      <div class="card">
+        <h3>Restaurant Gastronomique</h3>
+        <p>Menu haute cuisine, ambiance chic, réservation intégrée.</p>
+      </div>
+
+      <!-- ⭐ TES FLYERS ⭐ -->
+
+     <div class="card">
+  <h3>Flyer — La Popote des Îles (PNG Premium)</h3>
+  <img src="https://i.postimg.cc/KkKMMKYX/pa-e-ssa-removebg-preview.png"
+       alt="Flyer Premium"
+       style="width:100%; border-radius:12px; margin-top:15px;">
+</div>
+
+
+      <div class="card">
+        <h3>Flyer — Dim Auto 971</h3>
+        <img src="/attachments/z3ftMrMC4tVDBU8UdRWpb.png" style="width:100%; border-radius:12px; margin-top:15px;">
+      </div>
+
+      <div class="card">
+        <h3>Flyer — La Popote des Îles (Version 2)</h3>
+        <img src="https://postimg.cc/KkKMMKYX" style="width:100%; border-radius:12px; margin-top:15px;">
+      </div>
+
+      <!-- ⭐ NOUVELLE IMAGE AVEC TON LIEN POSTIMAGES ⭐ -->
+
+      <div class="card">
+        <h3>Flyer — Version PNG Premium</h3>
+        <img src="https://i.postimg.cc/MHbkCsZn/pa-e-ssa-removebg-preview.png"
+             alt="Flyer Premium PNG"
+             style="width:100%; border-radius:12px; margin-top:15px;">
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <h2>Prêt à créer votre univers luxe ?</h2>
+  <p>Contactez-moi pour un accompagnement premium et sur mesure.</p>
+  <a href="mailto:contact@tonmail.fr" class="btn-primary">Me contacter</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 — Anthony • Studio Luxe
+</footer>
+
+<!-- GSAP ANIMATIONS -->
+<script>
+  gsap.from("header", { opacity: 0, duration: 1.2, y: -30, ease: "power3.out" });
+
+  gsap.to(".hero h1", { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" });
+  gsap.to(".hero p", { opacity: 1, y: 0, duration: 1.2, delay: 0.2, ease: "power3.out" });
+  gsap.to(".btn-primary", { opacity: 1, y: 0, duration: 1.2, delay: 0.4, ease: "power3.out" });
+  gsap.to(".hero .card", { opacity: 1, y: 0, duration: 1.2, delay: 0.6, ease: "power3.out" });
+
+  gsap.utils.toArray("section h2, section p.section-sub, .cards .card, .cta").forEach(el => {
+    gsap.to(el, {
+      scrollTrigger: { trigger: el, start: "top 85%" },
       opacity: 1,
       y: 0,
       duration: 1.2,
       ease: "power3.out"
     });
-
-    gsap.to(".hero p", {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      delay: 0.2,
-      ease: "power3.out"
-    });
-
-    gsap.to(".btn-primary", {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      delay: 0.4,
-      ease: "power3.out"
-    });
-
-    gsap.to(".hero .card", {
-      opacity: 1,
-      y: 0,
-      duration: 1.2,
-      delay: 0.6,
-      ease: "power3.out"
-    });
-
-    gsap.utils.toArray("section h2, section p.section-sub, .cards .card, .cta").forEach(el => {
-      gsap.to(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%"
-        },
-        opacity: 1,
-        y: 0,
-        duration: 1.2,
-        ease: "power3.out"
-      });
-    });
-  </script>
+  });
+</script>
 
 </body>
 </html>
